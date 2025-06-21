@@ -1,16 +1,31 @@
 //
 //  NotifcationUse.swift
-//  SwiftHomeAssignment
+//  Swift _Home _Assignment
 //
-//  Created by Dor Luzgarten on 21/06/2025.
-//
+//  Created by Dor Luzgarten on 20/06/2025.
+//.
 
 import SwiftUI
 
 struct NotifcationUse: View {
+    @State private var showBanner = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            
+            Button("Show Notification") {
+                withAnimation {
+                    showBanner = true
+                }
+                
+            }
+            .padding()
+        }
+        .notificationBanner(isPresented: $showBanner, message: "This is a notification banner!", style: .success)
+        
     }
+    
 }
 
 #Preview {

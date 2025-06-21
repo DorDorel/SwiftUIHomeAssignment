@@ -1,18 +1,14 @@
 //
 //  NotificationViewExtension.swift
-//  SwiftHomeAssignment
+//  Swift _Home _Assignment
 //
-//  Created by Dor Luzgarten on 21/06/2025.
+//  Created by Dor Luzgarten on 20/06/2025.
 //
 
 import SwiftUI
 
-struct NotificationViewExtension: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension View {
+    func notificationBanner(isPresented: Binding<Bool>, message: String, style: BannerStyle = .info) -> some View {
+        modifier(NotificationBannerModifier(isPresented: isPresented, message: message, style: style))
     }
-}
-
-#Preview {
-    NotificationViewExtension()
 }
